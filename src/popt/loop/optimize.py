@@ -210,7 +210,7 @@ class Optimize(ABC):
                     r = self.epf['r']
                     self.logger(f'─────> EPF-EnOpt: {self.epf_iteration}, {r} (outer iteration, penalty factor)')  # print epf info
                 else:
-                    self.logger(f'─────> EPF-EnOpt: converged, penalty term larger than {conv_crit}')  # print epf info
+                    self.logger(f'─────> EPF-EnOpt: converged, penalty term smaller than {conv_crit}')  # print epf info
                     final_obj_no_penalty = str( round( float( np.mean(self.fun(self.xk)) ),4) )
                     self.logger(f'─────> EPF-EnOpt: objective value without penalty = {final_obj_no_penalty}') # print epf info
     def save(self):
